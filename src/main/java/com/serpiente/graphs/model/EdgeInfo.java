@@ -1,4 +1,4 @@
-package com.serpiente.graphs.dto;
+package com.serpiente.graphs.model;
 
 public class EdgeInfo {
     private Integer vertex1;

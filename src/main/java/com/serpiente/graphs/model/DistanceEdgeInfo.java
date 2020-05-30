@@ -1,4 +1,4 @@
-package com.serpiente.graphs.dto;
+package com.serpiente.graphs.model;
 
 public class DistanceEdgeInfo {
     private Integer distance;

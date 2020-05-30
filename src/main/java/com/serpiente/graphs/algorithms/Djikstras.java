@@ -1,8 +1,8 @@
 package com.serpiente.graphs.algorithms;
 
-import com.serpiente.graphs.dto.DistanceInfo;
-import com.serpiente.graphs.dto.Graph;
-import com.serpiente.graphs.dto.VertexInfo;
+import com.serpiente.graphs.model.DistanceInfo;
+import com.serpiente.graphs.model.Graph;
+import com.serpiente.graphs.model.VertexInfo;
 
 import java.util.*;
 
