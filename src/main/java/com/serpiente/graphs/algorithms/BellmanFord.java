@@ -4,6 +4,11 @@ import com.serpiente.graphs.model.Graph;
 
 import java.util.*;
 
+/**
+ * This class is an implementation of the BellmanFord Algorithm used to find the shortest path on a weighted graph with
+ * possible negative weights. To avoid integer overflow, we will use a large integer value in our distance info class
+ * rather than Integer.MaxValue.
+ */
 public class BellmanFord {
     private static class DistanceInfo {
         private int distance;
@@ -15,7 +20,30 @@ public class BellmanFord {
         }
     }
 
+    public void findShortestPath(Graph graph, Integer source, Integer destination) {
+        Map<Integer, DistanceInfo> distanceTable = buildDistanceTable(graph,source);
+        // Since we'll be backtracking, we'll use a stack
+        Stack<Integer> stack = new Stack<>();
+        stack.push(destination);
 
+        int previousVertex = distanceTable.get(destination).lastVertex;
+        while (previousVertex != -1 && previousVertex != source) {
+            // Add the last vertex of every node to the stack
+            stack.push(previousVertex);
+            previousVertex = distanceTable.get(previousVertex).lastVertex;
+        }
+
+        // IF there is no valid last vertex in the distance table, no path exists from source to destination.
+        if (previousVertex == -1) {
+            System.out.println("There is no path from source: " + source + " to destination: " + destination);
+        } else {
+            System.out.print("Shortest path is: " + source);
+            while (!stack.isEmpty()) {
+                System.out.print(" -> " + stack.pop());
+            }
+            System.out.println(" We have now completed BellmanFord Algorithm.");
+        }
+    }
 
 
     private Map<Integer, DistanceInfo> buildDistanceTable(Graph graph, int source) {

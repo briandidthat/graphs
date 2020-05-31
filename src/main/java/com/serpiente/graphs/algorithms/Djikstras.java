@@ -6,6 +6,10 @@ import com.serpiente.graphs.model.VertexInfo;
 
 import java.util.*;
 
+/**
+ * This is an implementation of Djikstra's path finding algorithm using a distance table. This is an example of a
+ * "Greedy Algorithm".
+ */
 public class Djikstras {
     public void findShortestPath(Graph graph, Integer source, Integer destination) {
         Map<Integer, DistanceInfo> distanceTable = buildDistanceTable(graph, source);
