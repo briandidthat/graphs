@@ -15,7 +15,6 @@ import java.util.Map;
  */
 
 public class PreRequisiteCourse {
-    private final GraphHelper graphHelper = new GraphHelper();
 
     public List<String> order(List<String> courses, Map<String, List<String>> prereqs) {
         Graph courseGraph = new AdjacencyMatrixGraph(courses.size(), true, Graph.GraphType.DIRECTED);
@@ -34,7 +33,7 @@ public class PreRequisiteCourse {
             }
         }
         // Call topological sort on the graph.
-        List<Integer> courseIdList = graphHelper.topologicalSort(courseGraph);
+        List<Integer> courseIdList = GraphHelper.topologicalSort(courseGraph);
 
         List<String> courseScheduleList = new ArrayList<>();
 

@@ -6,13 +6,15 @@ import com.serpiente.graphs.model.Graph;
 import java.util.*;
 
 /**
- * This class contains several methods for the traversal and sorting of unweighted graphs.
+ * This class contains several methods for the traversal and sorting of unweighted graphs. It's constructor is private
+ * to restrict instantiation of the class. The methods will be static.
  */
 
 public class GraphHelper {
+    private GraphHelper() {}
 
     // This is a post order traversal, where all the children will be processed before the parent node
-    public void depthFirstTraversal(Graph graph, int[] visited, int current) {
+    public static void depthFirstTraversal(Graph graph, int[] visited, int current) {
         if (visited[current] == 1) {
             return;
         }
@@ -27,7 +29,7 @@ public class GraphHelper {
     }
 
     // This is a traditional breadth first traversal using a queue.
-    public void breadthFirstTraversal(Graph graph, int[] visited, int current) {
+    public static void breadthFirstTraversal(Graph graph, int[] visited, int current) {
         LinkedList<Integer> queue = new LinkedList<>();
         queue.push(current);
 
@@ -50,7 +52,7 @@ public class GraphHelper {
     }
 
     // This is a topological sort method
-    public List<Integer> topologicalSort(Graph graph) {
+    public static List<Integer> topologicalSort(Graph graph) {
         LinkedList<Integer> queue = new LinkedList<>();
         Map<Integer, Integer> indegreeMap = new HashMap<>();
 
@@ -90,7 +92,7 @@ public class GraphHelper {
     }
 
     // Helper method to build a distance table for shortest path calculation
-    private Map<Integer, DistanceInfo> buildDistanceTable(Graph graph, int source) {
+    private static Map<Integer, DistanceInfo> buildDistanceTable(Graph graph, int source) {
         Map<Integer, DistanceInfo> distanceTable = new HashMap<>();
         for (int j = 0; j < graph.getNumVertices(); j++) {
             // Set an entry in the distance table for every vertex in the graph
@@ -125,7 +127,7 @@ public class GraphHelper {
     }
 
     // This will find the shortest path from the source to a destination for an unweighted graph
-    public void findShortestPath(Graph graph, int source, int destination) {
+    public static void findShortestPath(Graph graph, int source, int destination) {
         // Build the distance table for the whole graph starting from the source node.
         Map<Integer, DistanceInfo> distanceTable = buildDistanceTable(graph,source);
         // Since this will involve backtracking, we will use a stack.
