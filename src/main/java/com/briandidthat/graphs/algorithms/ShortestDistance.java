@@ -1,8 +1,8 @@
-package com.serpiente.graphs.algorithms;
+package com.briandidthat.graphs.algorithms;
 
-import com.serpiente.graphs.model.DistanceEdgeInfo;
-import com.serpiente.graphs.model.Graph;
-import com.serpiente.graphs.model.VertexInfo;
+import com.briandidthat.graphs.model.DistanceEdgeInfo;
+import com.briandidthat.graphs.model.Graph;
+import com.briandidthat.graphs.model.VertexInfo;
 
 import java.util.HashMap;
 import java.util.Map;

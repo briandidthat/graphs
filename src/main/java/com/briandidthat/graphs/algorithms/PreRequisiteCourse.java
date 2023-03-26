@@ -1,8 +1,8 @@
-package com.serpiente.graphs.algorithms;
+package com.briandidthat.graphs.algorithms;
 
-import com.serpiente.graphs.model.AdjacencyMatrixGraph;
-import com.serpiente.graphs.model.Graph;
-import com.serpiente.graphs.utils.GraphHelper;
+import com.briandidthat.graphs.model.AdjacencyMatrixGraph;
+import com.briandidthat.graphs.model.Graph;
+import com.briandidthat.graphs.utils.GraphHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
