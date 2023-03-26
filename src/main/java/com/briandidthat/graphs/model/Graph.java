@@ -1,4 +1,4 @@
-package com.serpiente.graphs.model;
+package com.briandidthat.graphs.model;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.serpiente.graphs.algorithms;
+package com.briandidthat.graphs.algorithms;
 
-import com.serpiente.graphs.model.Graph;
+import com.briandidthat.graphs.model.Graph;
 
 import java.util.*;
 
